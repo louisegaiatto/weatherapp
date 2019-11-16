@@ -1,8 +1,22 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+
 /** Ionic CSS Variables **/
 :root {
+
+  --ion-background-color: #6495ed;
+  --ion-toolbar-background: #435d8c;
+  --ion-toolbar-color: white;
+
+  --ion-tab-bar-background: #435d8c;
+  --ion-tab-bar-color: white;
+
+  --ion-item-background: #435d8c;
+  --ion-item-color: white;
+
+  --ion-text-color: white;
+
   /** primary **/
   --ion-color-primary: #6495ed;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -75,4 +89,3 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
-

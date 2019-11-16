@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from 'selenium-webdriver/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
 
-  apiKey = '770c7f2c8emshfc08585e2582a3ap1ee0e8jsn5717aae4fd49';
+  apiKey = '224a986a4077c868394b8b6df70444c2';
   url;
 
 
-  constructor() { 
+  constructor(public http: HttpClient) { 
     console.log('Helo weather service');
-    this.url = 'https://community-open-weather-map.p.rapidapi.com/weather';
-  }
+    this.http = http;
+ }
 
-  getWeather(city, state){
-    return true;
+  getWeather(latitude:String, longitude:String){
+
+    return true//this.http.get('https://api.darksky.net/forecast/'+this.apiKey+'/'+latitude+','+longitude+'?exclude=alerts,minutely,hourly')
+        //.map(res => res.json());
 
   }
 }
