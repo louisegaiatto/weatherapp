@@ -9,7 +9,7 @@
 <ion-content>
     <ion-row>
       <ion-col width-50 offset-25>
-        <h2>Porto Alegre, RS</h2>
+        <h2>{{data1['name']}}</h2>
         <div></div>
         <h3>Mostly Cloud</h3>
         <h1>20 C</h1>
@@ -19,7 +19,7 @@
       <ion-col width-100>
         <ion-list>
           <ion-item>
-            <strong>Temp: </strong> 20 C
+            <strong>Temp: </strong> {{data1['temperature']}}
           </ion-item>
           <ion-item>
             <strong>Humidity: </strong> 79%
