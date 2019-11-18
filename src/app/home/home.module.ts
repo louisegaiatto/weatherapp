@@ -4,8 +4,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
-import { LoadingController } from '@ionic/angular';
 import { WeatherService } from '../weather.service';
+import { OnInit} from '@angular/core';
+
 
 @NgModule({
   imports: [
@@ -16,30 +17,39 @@ import { WeatherService } from '../weather.service';
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {
-
-  data1: any;
-
-  constructor(public api: WeatherService, public loadingController: LoadingController) {}
-
-  async getData() {
-  const loading = await this.loadingController.create({
-    message: 'Loading'
-  });
-  await loading.present();
-  this.api.getData()
-    .subscribe(res => {
-      console.log(res);
-      this.data1 = res[0];
-      loading.dismiss();
-    }, err => {
-      console.log(err);
-      loading.dismiss();
-    });
-  }
-
+export class HomePageModule implements OnInit {
+  
   ngOnInit() {
-    this.getData();
+    this.getWeather();
+  }
+  
+  constructor(private weatherService: WeatherService) {
+  
   }
 
-}
+  
+  public weather;
+  public city: "Paris";
+
+ /*  search(formData: FormData){
+    console.log(formData);
+    this.ionicStorage.set("city", formData["city"]);
+    
+    this.weatherService.getWeatherFromApi("city").subscribe( weather => {
+      this.weather = weather;
+      console.log(weather);
+    })
+
+  } */
+
+
+  getWeather(){
+    
+          this.weatherService.getWeatherFromApi(this.city).subscribe( weather => {
+            this.weather = weather;
+            console.log(weather);
+          })
+        }
+  }
+  
+
