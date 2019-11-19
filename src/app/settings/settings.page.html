@@ -15,7 +15,7 @@
                   <strong>City: </strong><ion-input placeholder="Digite a cidade" [(ngModel)]="cityName"></ion-input>
               </ion-item>
               <ion-item>
-                  <ion-button (click) = "saveChanges()"><strong>Save Changes</strong></ion-button>
+                  <ion-button [href]="'/tabs/home/' + cityName" router-direction='forward'><strong>Save Changes</strong></ion-button>
               </ion-item>
             </ion-list>
           </ion-col>

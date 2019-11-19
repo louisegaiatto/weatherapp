@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WeatherService } from '../weather.service';
 
 @Component({
   selector: 'app-settings',
@@ -9,15 +10,8 @@ export class SettingsPage {
 
   constructor() {}
 
-  inputCityName: String;
   cityName: String;
 
-  saveChanges(){
-    console.log('Salvo');
-    
-    //this.cityName = this.inputCityName;
-    console.log(this.cityName);
-    console.log(this.inputCityName);
-  }
+
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,11 @@ import { WeatherService } from '../weather.service';
 })
 
 export class HomePage implements OnInit  {
+  
   public weather:any = {};
-  public city:string = "Paris";
+  public city:string;
 
-  constructor(private weatherService: WeatherService) {
+  constructor(private weatherService: WeatherService, private activeRoute: ActivatedRoute) {
     console.log('HomePageModule constructor');
   }
 
@@ -32,6 +34,7 @@ export class HomePage implements OnInit  {
 
   ngOnInit() {
       console.log('ngOnInit');
+      this.city = this.activeRoute.snapshot.paramMap.get('cityName');
       this.getWeather();
   }
 }

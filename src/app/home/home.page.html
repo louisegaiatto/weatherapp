@@ -11,8 +11,8 @@
         <ion-col width-50 offset-25>
           <h2>{{ (weather && weather.location) ? weather.location.name : '' }} </h2>
           <div><img src="{{ (weather && weather.current) ? weather.current.weather_icons[0] : '' }}"></div>
-          <h3>Mostly Cloud</h3>
-          <h1>20 C</h1>
+          <h3>{{ (weather && weather.current) ? weather.current.weather_descriptions : '' }}</h3>
+          <h1>{{ (weather && weather.current) ? weather.current.temperature : '' }}</h1>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -22,10 +22,10 @@
               <strong>Temp: </strong> {{ (weather && weather.current) ? weather.current.temperature : '' }}
             </ion-item>
             <ion-item>
-              <strong>Humidity: </strong> 79%
+              <strong>Humidity: </strong> {{ (weather && weather.current) ? weather.current.humidity : '' }}
             </ion-item>
             <ion-item>
-              <strong>Visibility: </strong> 10.0
+              <strong>Visibility: </strong> {{ (weather && weather.current) ? weather.current.visibility : '' }}
             </ion-item>
           </ion-list>
         </ion-col>
