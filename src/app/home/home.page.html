@@ -1,33 +1,34 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-    <ion-row>
-      <ion-col width-50 offset-25>
-        <h2>{{weather.location.name}}</h2>
-        <div></div>
-        <h3>Mostly Cloud</h3>
-        <h1>20 C</h1>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col width-100>
-        <ion-list>
-          <ion-item>
-            <strong>Temp: </strong> {{weather.current.temperature}}
-          </ion-item>
-          <ion-item>
-            <strong>Humidity: </strong> 79%
-          </ion-item>
-          <ion-item>
-            <strong>Visibility: </strong> 10.0
-          </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row>    
-</ion-content>
+    <ion-toolbar>
+      <ion-title>
+        Home
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-row>
+        <ion-col width-50 offset-25>
+          <h2>{{ (weather && weather.location) ? weather.location.name : '' }} </h2>
+          <div><img src="{{ (weather && weather.current) ? weather.current.weather_icons[0] : '' }}"></div>
+          <h3>Mostly Cloud</h3>
+          <h1>20 C</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-100>
+          <ion-list>
+            <ion-item>
+              <strong>Temp: </strong> {{ (weather && weather.current) ? weather.current.temperature : '' }}
+            </ion-item>
+            <ion-item>
+              <strong>Humidity: </strong> 79%
+            </ion-item>
+            <ion-item>
+              <strong>Visibility: </strong> 10.0
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>    
+  </ion-content>
+  

@@ -12,13 +12,10 @@
           <ion-col width-100>
             <ion-list>
               <ion-item>
-                <strong>City: </strong> Porto Alegre
+                  <strong>City: </strong><ion-input placeholder="Digite a cidade" [(ngModel)]="cityName"></ion-input>
               </ion-item>
               <ion-item>
-                  <strong>State: </strong> Rio Grande do Sul
-              </ion-item>
-              <ion-item>
-                  <strong>Save Changes</strong>
+                  <ion-button (click) = "saveChanges()"><strong>Save Changes</strong></ion-button>
               </ion-item>
             </ion-list>
           </ion-col>
