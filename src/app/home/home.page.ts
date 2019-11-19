@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HomePage implements OnInit  {
   
   public weather:any = {};
-  public city:string;
+  public city:string = "Paris";
 
   constructor(private weatherService: WeatherService, private activeRoute: ActivatedRoute) {
     console.log('HomePageModule constructor');
